@@ -1,13 +1,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color:#333;
+  font-size: 14px;
+  line-height:1.5;
 }
 
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
 
 .wrapper {
   background: #fff;
   margin: 0 auto;
   display: grid;
-  grid: auto auto / 1fr 960px 1fr;
+  grid: auto auto / 1fr 900px 1fr;
+  padding-bottom: 50px;
 }
 
 
@@ -24,56 +32,161 @@ header img {
   width: 64px;
   border-radius: 50%;
 }
-header h2 {
+header h1 {
   margin: 20px 0;
   color:#eee;
   font-size: 16px;
   font-weight: bold;
 }
 .content {
+
   grid-area: 2 / 2 / -1 / -2;
-  width: 960px;
+  width: 800px;
   display: grid;
-  grid: 1fr / 260px 700px;
-  background: rgb(115, 139, 115);
+  grid: 1fr / 300px 600px;
+
+  padding-top:30px
+  /* background: rgb(115, 139, 115); */
 }
 
 aside {
+  width: 100%;
   grid-area: 1 / 1 / -1 / 2;
-  height: 400px;
   
 }
-aside .basic-info {
+section {
   display: grid;
   grid:auto auto / 50px 1fr;
-  justify-items:center;
+  justify-items:left;
   align-items: center;
+  column-gap: 15px;
+
 }
-aside .basic-info>i {
+section>i {
   grid-area: 1/1/2/2;
+  justify-self: center;
   display:inline-block;
   height:32px;
   width:32px;
+  margin: 10px;
 
-  background: #77a8a3;
+  background: rgb(145, 88, 88);
   border-radius: 50%;
   text-align:center
 }
-aside .basic-info>i::before {
+section>i::before {
   color:white;
   line-height: 32px;
 }
-aside .basic-info > h1 {
+section > h2 {
   grid-area: 1/2/2/-1;
+  position: relative;
+  font-weight: bold;
 }
-aside .basic-info > ul {
+section > h2::after {
+  content: '';
+  display: inline-block;
+  border-top: 2px solid rgb(145, 88, 88);
+  width: 128px;
+  vertical-align: middle;
+
+  position: relative;
+  left:35px;
+}
+
+aside   ul li{
+  margin-bottom: 15px;
+}
+aside ul li span {
+  margin-left: 15px;
+}
+section > ul {
   grid-area: 2/2/-1/-1;
-  width:100%
+  width: 100%;
+}
+
+aside .master-skill li {
+  list-style-type: disc;
+}
+
+aside  .master-skill  li span {
+  margin-left: 0;
+}
+
+aside .skill-map dl{
+  grid-area: 2/-1/-1/2;
+  width: 100%;
+  margin-top: 20px;
+}
+aside .skill-map dl dt{
+  padding: 5px 0;
+}
+aside .skill-map dl dd{
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+aside .skill-map dl dd span{
+  position: absolute;
+  height: 3px;
+  background: rgb(145, 88, 88);
 }
 main {
-  grid: 1 / 2 / -1 / -1;
-  height: 500px;
+  margin-left: 20px;
 }
+
+
+
+main section h2:after{
+  width:408px;;
+}
+
+main section>ul>li {
+
+  display: grid;
+  grid: auto auto / 120px 1fr 120px;
+  margin-bottom: 27px;
+}
+
+main section li span:first-child {
+  grid-area: 1/2/2/1;
+}
+
+main section li span:nth-child(2){
+
+  grid-area: 1/3/2/2;
+  font-weight: bold;
+}
+
+main section li span:nth-child(3){
+  grid-area: 1/-1/2/-2;
+  justify-self: right;
+}
+
+main section li>p {
+  grid-area: 2/-1/-1/2;
+  margin-top: 10px;
+}
+
+.job-exper ul.desc,.pro-exper ul.desc {
+
+  grid-area: 2/-1/-1/2;
+}
+
+.job-exper ul.desc li,.pro-exper ul.desc li{
+  list-style:circle;
+  margin: 15px 0;
+}
+
+
+
+
+
+
 
 
 
